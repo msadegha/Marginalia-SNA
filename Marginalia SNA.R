@@ -1,3 +1,5 @@
+# This file contains the code to create a semantic network to analyze the marginalia of al-Urmawi's manuscripts on the science of music 
+
 text = readLines("~/Desktop/BNF_copy_stemmed_manually_parsed.txt")
 length(text)
 
