@@ -86,41 +86,6 @@ bnf_comments
 
 #Let's start with marginalia level co-occurences, the following is just a recap of what we had already done.
 
-text = readLines("~/Desktop/NLAI-5-1556-farasa-stemmed.txt")
-
-text = subset(text, text != "")
-text = subset(text, !grepl('[0-9]+', text) )
-
-text = gsub('[[:punct:] ]+',' ', text)
-
-wordstoppers = readLines("~/Desktop/Arabic_wordstoppers.txt")
-
-tokenized_paragraphs = strsplit(text, " ")
-tokenized_paragraphs = lapply(tokenized_paragraphs, FUN = function(x) subset(x, !x %in% wordstoppers))
-
-#counting
-
-#identify indeces longer than one letter
-
-vectored_paragraphs = unlist (tokenized_paragraphs)
-
-letterized_words = strsplit(vectored_paragraphs, "")
-
-word_lengths = lapply(letterized_words, length)
-
-good_list = unlist(word_lengths) > 1
-
-vectored_paragraphs = vectored_paragraphs [good_list]
-
-#doing the actual counting, using a function called table
-
-counting_words = table(vectored_paragraphs)
-
-#now we are going to make the matrix, using the table we already had. The table gives us a list of all the words in this text.
-
-counting_words
-View(counting_words)
-
 all_words = names(counting_words)
 all_words
 
