@@ -1,6 +1,6 @@
 # This file contains the code to create a semantic network to analyze the marginalia of al-Urmawi's manuscripts on the science of music 
 
-text = readLines("~/Desktop/BNF_copy_stemmed_manually_parsed.txt")
+text = readLines("~/Desktop/BNF 4867_farasa_stemmed_parsed.txt")
 length(text)
 
 text = subset(text, text != "")
@@ -57,7 +57,7 @@ View (counting_words_sorted)
 
 #write to a file, as in, export it
 
-write.csv(counting_words_sorted, "~/Desktop/Sadegh_Tutorials/BNF_word_count.csv")
+#write.csv(counting_words_sorted, "~/Desktop/Sadegh_Tutorials/BNF_word_count.csv")
 
 
 #now with making the wordcloud
